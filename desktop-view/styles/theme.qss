@@ -1,0 +1,3 @@
+/* Global Theme Loader */
+@import "variables.qss";
+@import "widgets.qss";

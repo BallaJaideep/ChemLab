@@ -1,0 +1,23 @@
+/* ============================================================
+   CHEMLAB DESIGN TOKENS
+   ============================================================ */
+
+:root {
+    /* Core Palette */
+    --navy: #0f172a;
+    --cobalt: #2563eb;
+    --teal: #0d9488;
+    --slate: #64748b;
+    --frost: #f8fafc;
+    --white: #ffffff;
+
+    /* Status Colors */
+    --success-bg: #dcfce7;
+    --success-text: #166534;
+    --error-bg: #fef2f2;
+    --error-text: #991b1b;
+
+    /* UI */
+    --border: #e2e8f0;
+    --radius: 8px;
+}

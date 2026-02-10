@@ -1,0 +1,165 @@
+/* ============================================================
+   CHEMLAB WIDGET STYLES
+   ============================================================ */
+
+/* ---------- MAIN WINDOW ---------- */
+QMainWindow {
+    background-color: var(--frost);
+}
+
+/* ---------- LABELS ---------- */
+QLabel {
+    color: var(--navy);
+    font-family: "Inter";
+    font-size: 14px;
+}
+
+/* Titles */
+QLabel#Title {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+/* Subtitles */
+QLabel#Subtitle {
+    color: var(--slate);
+    font-size: 13px;
+}
+
+/* ---------- INPUTS ---------- */
+QLineEdit {
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background-color: var(--white);
+    font-size: 14px;
+}
+
+QLineEdit:focus {
+    border-color: var(--cobalt);
+}
+
+/* ---------- BUTTONS ---------- */
+QPushButton {
+    background-color: var(--navy);
+    color: var(--white);
+    border: none;
+    padding: 10px 18px;
+    border-radius: var(--radius);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+QPushButton:hover {
+    background-color: var(--cobalt);
+}
+
+QPushButton:disabled {
+    background-color: #94a3b8;
+    color: #e5e7eb;
+}
+
+/* Primary button */
+QPushButton#PrimaryButton {
+    background-color: var(--navy);
+}
+
+/* Danger button */
+QPushButton#DangerButton {
+    background-color: #dc2626;
+}
+
+/* ---------- CONTAINERS ---------- */
+QWidget#Card {
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+}
+
+/* ---------- STATUS LABELS ---------- */
+QLabel#Success {
+    background-color: var(--success-bg);
+    color: var(--success-text);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+QLabel#Error {
+    background-color: var(--error-bg);
+    color: var(--error-text);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+#Navbar {
+    background: white;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+#NavbarBrand {
+    font-size: 20px;
+    font-weight: 800;
+    color: #2563eb;
+}
+
+#NavButton {
+    background: transparent;
+    border: none;
+    padding: 8px 14px;
+    font-weight: 600;
+}
+
+#NavButton:hover {
+    color: #2563eb;
+}
+
+#LogoutButton {
+    background: #fee2e2;
+    color: #b91c1c;
+    border-radius: 6px;
+    padding: 6px 14px;
+    font-weight: 700;
+}
+
+/* ===== DASHBOARD ===== */
+
+#StatCard {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 20px;
+}
+
+#StatLabel {
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #64748b;
+    font-weight: 700;
+}
+
+#StatValue {
+    font-size: 28px;
+    font-weight: 900;
+    color: #0f172a;
+}
+
+#StatUnit {
+    font-size: 12px;
+    color: #64748b;
+}
+
+#ChartCard {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 20px;
+}
+
+#ChartTitle {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+

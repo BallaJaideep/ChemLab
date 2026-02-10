@@ -1,8 +1,14 @@
 from django.urls import path
-from .views import UploadCSVView, DatasetHistoryView, PDFReportView
+from .views import (
+    UploadCSVView,
+    DatasetHistoryView,
+    DatasetDetailView,
+    DatasetPDFView,
+)
 
 urlpatterns = [
-    path("upload/", UploadCSVView.as_view(), name="upload-csv"),
-    path("history/", DatasetHistoryView.as_view(), name="dataset-history"),
-    path("report/", PDFReportView.as_view(), name="pdf-report"),
+    path("upload/", UploadCSVView.as_view()),
+    path("history/", DatasetHistoryView.as_view()),
+    path("dataset/<int:dataset_id>/", DatasetDetailView.as_view()),
+    path("dataset/<int:dataset_id>/pdf/", DatasetPDFView.as_view()),
 ]
