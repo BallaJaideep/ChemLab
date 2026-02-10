@@ -1,12 +1,10 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
-/* ===== PUBLIC PAGES ===== */
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
 
-/* ===== PROTECTED PAGES ===== */
 import Home from "./pages/Home";
 import Upload from "./pages/Upload";
 import History from "./pages/History";
@@ -14,14 +12,12 @@ import DatasetView from "./pages/DatasetView";
 import Analysis from "./pages/Analysis";
 import Charts from "./pages/Charts";
 
-/* ===== LAYOUT & AUTH ===== */
 import ProtectedRoute from "./components/ProtectedRoute";
 import MainLayout from "./layout/MainLayout";
 
 const App = () => {
   return (
     <Routes>
-      {/* ================= PUBLIC ROUTES ================= */}
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
@@ -30,7 +26,6 @@ const App = () => {
         element={<ResetPassword />}
       />
 
-      {/* ================= PROTECTED ROUTES ================= */}
       <Route
         path="/"
         element={
@@ -96,8 +91,6 @@ const App = () => {
           </ProtectedRoute>
         }
       />
-
-      {/* ================= FALLBACK ROUTE ================= */}
       <Route path="*" element={<Navigate to="/login" replace />} />
     </Routes>
   );
