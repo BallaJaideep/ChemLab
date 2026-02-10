@@ -4,7 +4,6 @@ import { fetchDatasetDetail } from "../services/api";
 import { Bar } from "react-chartjs-2";
 import "../styles/datasetView.css";
 
-/* ================= CHART.JS SETUP ================= */
 import {
   Chart as ChartJS,
   CategoryScale,
