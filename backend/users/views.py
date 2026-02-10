@@ -10,10 +10,6 @@ from rest_framework import status
 
 from .serializers import RegisterSerializer
 
-
-# =========================
-# REGISTER USER
-# =========================
 class RegisterView(APIView):
     """
     POST /api/auth/register/
@@ -42,9 +38,7 @@ class RegisterView(APIView):
         )
 
 
-# =========================
-# LOGOUT (JWT – CLIENT SIDE)
-# =========================
+
 class LogoutView(APIView):
     """
     POST /api/auth/logout/
@@ -60,9 +54,7 @@ class LogoutView(APIView):
         )
 
 
-# =========================
-# PASSWORD RESET REQUEST
-# =========================
+
 class PasswordResetRequestView(APIView):
     """
     POST /api/auth/forgot-password/
@@ -111,9 +103,7 @@ class PasswordResetRequestView(APIView):
         )
 
 
-# =========================
-# PASSWORD RESET CONFIRM
-# =========================
+
 class PasswordResetConfirmView(APIView):
     """
     POST /api/auth/reset-password/<uid>/<token>/
