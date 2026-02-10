@@ -1,4 +1,4 @@
-# api/client.py
+
 
 import requests
 from app_state import AppState
@@ -7,9 +7,7 @@ from app_state import AppState
 class APIClient:
     def __init__(self):
         self.base_url = "http://127.0.0.1:8000/api/"
-        self.session = requests.Session()
-
-    # ================= AUTH =================
+        self.session = requests.Session() 
     def login(self, username, password):
         url = self.base_url + "auth/login/"
         response = self.session.post(url, json={
@@ -27,9 +25,7 @@ class APIClient:
             "password": password
         })
         response.raise_for_status()
-        return response.json()
-
-    # ================= AUTH HEADER =================
+        return response.json() 
     def auth_headers(self):
         if AppState.token:
             return {
