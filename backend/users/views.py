@@ -77,7 +77,7 @@ class PasswordResetRequestView(APIView):
         try:
             user = User.objects.get(email=email)
         except User.DoesNotExist:
-            # 🔒 Security best practice: do not reveal user existence
+            # Security best practice: do not reveal user existence
             return Response(
                 {"message": "If this email exists, a reset link has been sent"},
                 status=status.HTTP_200_OK,
@@ -88,7 +88,7 @@ class PasswordResetRequestView(APIView):
 
         reset_link = f"http://localhost:5173/reset-password/{uid}/{token}"
 
-        # 🔴 Email sending (safe to fail silently in dev)
+        #Email sending (safe to fail silently in dev)
         send_mail(
             subject="Password Reset Request",
             message=f"Reset your password using this link:\n{reset_link}",
