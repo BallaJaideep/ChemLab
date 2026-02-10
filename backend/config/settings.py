@@ -1,7 +1,7 @@
 from pathlib import Path
 from datetime import timedelta
 
-# ================= BASE =================
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = "django-insecure-reset-project"
@@ -11,10 +11,9 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
-    "192.168.1.5",   # 👈 your PC IP
+    "192.168.1.5",   
 ]
 
-# ================= APPS =================
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -30,7 +29,6 @@ INSTALLED_APPS = [
     "analytics",
 ]
 
-# ================= MIDDLEWARE =================
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
@@ -42,7 +40,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-# ================= TEMPLATES =================
+
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -59,14 +57,13 @@ TEMPLATES = [
     },
 ]
 
-# ================= CORS =================
 CORS_ALLOW_ALL_ORIGINS = True
 
-# ================= URLS / WSGI =================
+
 ROOT_URLCONF = "config.urls"
 WSGI_APPLICATION = "config.wsgi.application"
 
-# ================= DATABASE =================
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
@@ -74,7 +71,6 @@ DATABASES = {
     }
 }
 
-# ================= DRF + JWT =================
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
@@ -89,14 +85,12 @@ SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=60),
 }
 
-# ================= MEDIA / STATIC =================
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
 STATIC_URL = "/static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-# ================= EMAIL (REAL GMAIL SMTP) =================
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 
 EMAIL_HOST = "smtp.gmail.com"
