@@ -1,36 +1,3 @@
-// import { Link } from "react-router-dom";
-// import "../styles/auth.css";
-
-// const ForgotPassword = () => {
-//   return (
-//     <div className="auth-wrapper">
-//       <div className="auth-card">
-//         <h1 className="auth-title">Recover Password</h1>
-//         <p className="auth-subtitle">
-//           Enter your email to receive reset instructions
-//         </p>
-
-//         <form className="auth-form">
-//           <input
-//             type="email"
-//             placeholder="Email address"
-//             required
-//           />
-
-//           <button className="auth-btn">
-//             Send Recovery Link
-//           </button>
-//         </form>
-
-//         <div className="auth-links">
-//           <Link to="/login">Back to login</Link>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default ForgotPassword;
 
 import { useState } from "react";
 import { Link } from "react-router-dom";
