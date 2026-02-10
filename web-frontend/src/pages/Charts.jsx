@@ -3,7 +3,6 @@ import { fetchHistory, fetchDatasetDetail } from "../services/api";
 import { Bar } from "react-chartjs-2";
 import "../styles/charts.css";
 
-/* ✅ CHART.JS REGISTRATION */
 import {
   Chart as ChartJS,
   CategoryScale,
