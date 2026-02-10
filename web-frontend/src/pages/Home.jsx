@@ -6,7 +6,7 @@ const Home = () => {
 
   return (
     <div className="home-root">
-      {/* ===== HERO SECTION ===== */}
+   
       <section className="hero-wrap">
         <h1 className="hero-main-title">Chem<span className="accent">Lab</span></h1>
         <p className="hero-tagline">
@@ -15,7 +15,6 @@ const Home = () => {
         </p>
       </section>
 
-      {/* ===== UPLOAD SECTION (HIGHLIGHTED) ===== */}
       <section className="upload-container">
         <div className="upload-box" onClick={() => navigate("/upload")}>
           <div className="upload-info">
@@ -31,10 +30,9 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ===== MULTI-COLOR FEATURE GRID ===== */}
       <section className="feature-grid">
         
-        {/* Card: Inventory - Purple Theme */}
+    
         <div className="action-card purple-theme" onClick={() => navigate("/upload")}>
           <div className="card-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
@@ -45,7 +43,7 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Card: Analysis - Cobalt Theme */}
+  
         <div className="action-card cobalt-theme" onClick={() => navigate("/analysis")}>
           <div className="card-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
@@ -56,7 +54,7 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Card: Charts - Emerald Theme */}
+  
         <div className="action-card emerald-theme" onClick={() => navigate("/charts")}>
           <div className="card-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
@@ -67,7 +65,7 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Card: History - Amber Theme */}
+      
         <div className="action-card amber-theme" onClick={() => navigate("/history")}>
           <div className="card-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
@@ -80,7 +78,7 @@ const Home = () => {
 
       </section>
 
-      {/* ===== FOOTER ===== */}
+      
       <footer className="home-footer">
         <div className="footer-wrap">
           <div className="footer-brand">⬢ ChemLab Analytics</div>
