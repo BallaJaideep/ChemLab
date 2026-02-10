@@ -1,8 +1,6 @@
 import axios from "axios";
 import { getToken } from "./auth";
 
-/* ================= BASE API INSTANCE ================= */
-
 const api = axios.create({
   baseURL: "http://127.0.0.1:8000/api/",
   headers: {
@@ -10,7 +8,6 @@ const api = axios.create({
   },
 });
 
-/* ================= JWT INTERCEPTOR ================= */
 
 api.interceptors.request.use(
   (config) => {
@@ -25,21 +22,15 @@ api.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
-/* ================= AUTH ================= */
-
-/* ✅ LOGIN */
 export const loginUser = async (credentials) => {
   const res = await api.post("auth/login/", credentials);
   return res.data;
 };
 
-/* ✅ REGISTER */
 export const registerUser = async (data) => {
   const res = await api.post("auth/register/", data);
   return res.data;
 };
-
-/* ================= DATA UPLOAD ================= */
 
 export const uploadDataset = async (file) => {
   const formData = new FormData();
@@ -54,21 +45,17 @@ export const uploadDataset = async (file) => {
   return res.data;
 };
 
-/* ================= HISTORY ================= */
 
 export const fetchHistory = async () => {
   const res = await api.get("history/");
   return res.data;
 };
 
-/* ================= DATASET DETAIL ================= */
 
 export const fetchDatasetDetail = async (id) => {
   const res = await api.get(`dataset/${id}/`);
   return res.data;
 };
-
-/* ================= PDF DOWNLOAD ================= */
 
 export const downloadPDF = async (id, filename) => {
   const res = await api.get(`dataset/${id}/pdf/`, {
@@ -89,6 +76,5 @@ export const downloadPDF = async (id, filename) => {
   window.URL.revokeObjectURL(url);
 };
 
-/* ================= EXPORT DEFAULT ================= */
 
 export default api;
