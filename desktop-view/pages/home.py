@@ -1,4 +1,4 @@
-# pages/home.py
+
 
 from PyQt5.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QGridLayout,
@@ -13,13 +13,12 @@ class HomePage(QWidget):
         self.on_navigate = on_navigate
         self.build_ui()
 
-    # =====================================================
+    
     def build_ui(self):
         root = QVBoxLayout(self)
         root.setSpacing(32)
         root.setContentsMargins(48, 36, 48, 28)
 
-        # ================= HERO =================
         hero = QVBoxLayout()
         hero.setSpacing(12)
 
@@ -46,7 +45,7 @@ class HomePage(QWidget):
         hero.addWidget(tagline)
         root.addLayout(hero)
 
-        # ================= UPLOAD HIGHLIGHT =================
+        
         upload_card = QFrame()
         upload_card.setCursor(Qt.PointingHandCursor)
         upload_card.setStyleSheet("""
@@ -109,7 +108,7 @@ class HomePage(QWidget):
 
         root.addWidget(upload_card)
 
-        # ================= FEATURE GRID =================
+        
         grid = QGridLayout()
         grid.setSpacing(20)
         grid.setContentsMargins(0, 12, 0, 12)
@@ -157,7 +156,7 @@ class HomePage(QWidget):
         root.addLayout(grid)
         root.addStretch()
 
-        # ================= FOOTER =================
+        
         footer = QHBoxLayout()
 
         brand = QLabel("⬢ ChemLab Analytics")
@@ -180,7 +179,7 @@ class HomePage(QWidget):
 
         root.addLayout(footer)
 
-    # =====================================================
+    
     def feature_card(self, title, desc, accent, callback):
         card = QFrame()
         card.setCursor(Qt.PointingHandCursor)
