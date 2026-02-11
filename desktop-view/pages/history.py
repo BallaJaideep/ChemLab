@@ -1,95 +1,3 @@
-# # pages/history.py
-
-# from PyQt5.QtWidgets import (
-#     QWidget, QVBoxLayout, QLabel,
-#     QTableWidget, QTableWidgetItem,
-#     QPushButton, QFileDialog, QHBoxLayout
-# )
-
-# from app_state import AppState
-# from utils.pdf_report import generate_pdf_report
-
-
-# class HistoryPage(QWidget):
-#     def __init__(self, on_navigate):
-#         super().__init__()
-#         self.on_navigate = on_navigate
-#         self.build_ui()
-
-#     def build_ui(self):
-#         layout = QVBoxLayout(self)
-#         layout.setSpacing(16)
-
-#         title = QLabel("Dataset History")
-#         title.setStyleSheet("font-size:22px; font-weight:800;")
-#         layout.addWidget(title)
-
-#         self.table = QTableWidget()
-#         self.table.setColumnCount(5)
-#         self.table.setHorizontalHeaderLabels(
-#             ["#", "Dataset", "Records", "Status", "Actions"]
-#         )
-#         self.table.verticalHeader().setVisible(False)
-#         layout.addWidget(self.table)
-
-#     def on_show(self):
-#         self.refresh()
-
-#     def refresh(self):
-#         history = AppState.load_history()
-#         self.table.setRowCount(len(history))
-
-#         for row, item in enumerate(history):
-#             self.table.setItem(row, 0, QTableWidgetItem(str(row + 1)))
-#             self.table.setItem(row, 1, QTableWidgetItem(item["filename"]))
-#             self.table.setItem(row, 2, QTableWidgetItem(str(item["records"])))
-#             self.table.setItem(row, 3, QTableWidgetItem(item["status"]))
-
-#             actions = QWidget()
-#             btn_layout = QHBoxLayout(actions)
-#             btn_layout.setContentsMargins(0, 0, 0, 0)
-
-#             view_btn = QPushButton("View")
-#             pdf_btn = QPushButton("PDF")
-
-#             dataset_id = item["id"]
-
-#             view_btn.clicked.connect(
-#                 lambda _, d=dataset_id: self.view_dataset(d)
-#             )
-#             pdf_btn.clicked.connect(
-#                 lambda _, d=dataset_id: self.export_pdf(d)
-#             )
-
-#             btn_layout.addWidget(view_btn)
-#             btn_layout.addWidget(pdf_btn)
-#             self.table.setCellWidget(row, 4, actions)
-
-#     def view_dataset(self, dataset_id):
-#         AppState.load_dataset_by_id(dataset_id)
-#         self.on_navigate("dataset_view")  # ✅ FIXED
-
-#     def export_pdf(self, dataset_id):
-#         meta = AppState.get_dataset_meta(dataset_id)
-#         if not meta or not AppState.summary:
-#             return
-
-#         path, _ = QFileDialog.getSaveFileName(
-#             self,
-#             "Save PDF",
-#             meta["filename"].replace(".csv", "_report.pdf"),
-#             "PDF Files (*.pdf)"
-#         )
-
-#         if path:
-#             generate_pdf_report(
-#                 meta["filename"],
-#                 AppState.summary,
-#                 path
-#             )
-
-
-# pages/history.py
 
 from PyQt5.QtWidgets import (
     QWidget, QVBoxLayout, QLabel,
@@ -109,13 +17,11 @@ class HistoryPage(QWidget):
         self.on_navigate = on_navigate
         self.build_ui()
 
-    # =====================================================
     def build_ui(self):
         root = QVBoxLayout(self)
         root.setSpacing(24)
         root.setContentsMargins(36, 30, 36, 24)
 
-        # ================= HEADER =================
         header = QVBoxLayout()
         header.setSpacing(6)
 
@@ -138,7 +44,6 @@ class HistoryPage(QWidget):
         header.addWidget(subtitle)
         root.addLayout(header)
 
-        # ================= TABLE CARD =================
         card = QFrame()
         card.setStyleSheet("""
             QFrame {
@@ -182,13 +87,12 @@ class HistoryPage(QWidget):
         card_layout.addWidget(self.table)
         root.addWidget(card)
 
-    # =====================================================
     def on_show(self):
         self.refresh()
 
-    # =====================================================
+    
     def refresh(self):
-        # ✅ SHOW ONLY LAST 5 DATASETS
+        
         history = AppState.load_history()[:5]
 
         self.table.setRowCount(len(history))
@@ -199,7 +103,7 @@ class HistoryPage(QWidget):
             self.table.setItem(row, 2, QTableWidgetItem(str(item["records"])))
             self.table.setItem(row, 3, QTableWidgetItem(item["status"]))
 
-            # ---------- ACTION BUTTONS ----------
+            
             actions = QWidget()
             btn_layout = QHBoxLayout(actions)
             btn_layout.setContentsMargins(0, 0, 0, 0)
@@ -256,12 +160,11 @@ class HistoryPage(QWidget):
         self.table.resizeColumnsToContents()
         self.table.setColumnWidth(4, 170)
 
-    # =====================================================
     def view_dataset(self, dataset_id):
         AppState.load_dataset_by_id(dataset_id)
         self.on_navigate("dataset_view")
 
-    # =====================================================
+
     def export_pdf(self, dataset_id):
         meta = AppState.get_dataset_meta(dataset_id)
         if not meta or not AppState.summary:
