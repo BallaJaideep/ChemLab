@@ -1,4 +1,4 @@
-# layout/protected.py
+
 
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QStackedWidget
 
@@ -20,15 +20,15 @@ class ProtectedLayout(QWidget):
         layout = QVBoxLayout(self)
         layout.setContentsMargins(0, 0, 0, 0)
 
-        # -------- NAVBAR --------
+        
         self.navbar = Navbar(self.navigate, self.on_logout)
         layout.addWidget(self.navbar)
 
-        # -------- STACK --------
+
         self.stack = QStackedWidget()
         layout.addWidget(self.stack)
 
-        # -------- PAGES --------
+        
         self.pages = {
             "home": HomePage(self.navigate),
             "upload": UploadPage(),
